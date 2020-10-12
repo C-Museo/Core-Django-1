@@ -76,9 +76,9 @@ WSGI_APPLICATION = 'comfort_gallery.wsgi.application'
 DATABASES = {
 'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': 'Comfort Museo',
-           'USER': 'comfort',
-           'PASSWORD': 'museo',
+           'NAME': '',
+           'USER': '',
+           'PASSWORD': '',
            'HOST': '127.0.0.1',
            'PORT': '',
        }
