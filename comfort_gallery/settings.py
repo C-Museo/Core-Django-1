@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'nzx(0t^jp!7ohgz7t^&1i_8ot#0myu#a&!-cm%1s*(c1f3t_=4'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
 
 # Application definition
@@ -76,11 +77,11 @@ WSGI_APPLICATION = 'comfort_gallery.wsgi.application'
 DATABASES = {
 'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': '',
-           'USER': '',
-           'PASSWORD': '',
-           'HOST': '127.0.0.1',
-           'PORT': '',
+           'NAME': os.environ.get('DB_NAME'),
+           'USER': os.environ.get('DB_USER'),
+           'PASSWORD': os.environ.get('DB_PASSWORD'),
+           'HOST': os.environ.get('DB_PASSWORD','127.0.0.1'),
+           'PORT': os.environ.get('DB_PORT'),
        }
 }
 
