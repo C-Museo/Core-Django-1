@@ -1,5 +1,5 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 #Image
 #Image Name.
@@ -8,10 +8,16 @@ from django.db import models
 #Image category Foreign Key.
 
 class Image(models.Model):
-    image_name=models.CharField(max_length =30)
-    image_decsription=models.CharField(max_length =30)
+    image=CloudinaryField('image')
+    image_description=models.CharField(max_length =30)
     image_location=models.CharField(max_length =30)
     image_category=models.CharField(max_length =30)
+
+    def _str_self(self):
+        return self.image_description
+    
+    class Meta:
+        verbose_name_plural=('Images')
 
 class Location(models.Model):
     location_description=models.CharField(max_length=30)
