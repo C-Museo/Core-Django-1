@@ -5,11 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% if title %}
-    <title>{{title}}</title>
-    {% else %}
-    <title>Document</title>
-    {% endif %}
+
+<title>Document</title>
 
     {% block styles %}
         {% bootstrap_css %}
@@ -18,7 +15,6 @@
 
 </head>
 <body>
-    {% include "navbar.html" %}
 
     {% block content %} <h1 class='text-center'>A collection Of Interesting Photos</h1> {%endblock%}
     {% block scripts %}

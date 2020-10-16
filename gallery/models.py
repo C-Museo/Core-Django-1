@@ -10,11 +10,12 @@ from cloudinary.models import CloudinaryField
 class Image(models.Model):
     image=CloudinaryField('image')
     image_description=models.CharField(max_length =30)
-    image_location=models.CharField(max_length =30)
-    image_category=models.CharField(max_length =30)
+    #image_location=models.CharField(max_length =30)
+    #image_category=models.CharField(max_length =30)
 
     def _str_self(self):
         return self.image_description
+    objects = models.Manager()
     
     class Meta:
         verbose_name_plural=('Images')

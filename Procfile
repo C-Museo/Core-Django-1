@@ -1,0 +1,1 @@
+web: gunicorn comfort_gallery.wsgi --log-file -

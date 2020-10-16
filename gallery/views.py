@@ -1,10 +1,16 @@
 from django.shortcuts import render
 from django.http  import HttpResponse
+#from forms import *
+from .models import Image
 
-def welcome(request):
-    title='Welcome to my gallery'
-    return render( request, 'gallery/home.html' ,{'title': title} )
+def home(request):
+    return render (request, 'home.html')
 
-def search_results(request):
+#def welcome(request):
+    #title='Welcome to my gallery'
+    #images=Image.objects.all()
+    #return render( request, '/home.html' ,{'title': title, 'images': images} )
 
-    return HttpResponse(html)
+#def search_results(request):
+
+    #return HttpResponse('html')
