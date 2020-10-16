@@ -15,7 +15,7 @@ import os
 import cloudinary
 import django_heroku
 import dj_database_url
-from decouple import Csv
+#from decouple import Csv
 
 MODE=os.environ.get('MODE')
 #SECRET_KEY = config('SECRET_KEY')
@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
 
 # Application definition
